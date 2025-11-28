@@ -16,9 +16,9 @@ return new class extends Migration
             $table->string('nama');
             $table->string('email')->unique();
             $table->enum('role',[0,1,2])->default(0); //o =admin,1 = SuperAdmin, 2=customer
-            $table->boolean('status'); // 0 = belum aktif,1=aktif
+            $table->boolean('status')->default(false); // 0 = belum aktif,1=aktif
             $table->string('password');
-            $table->string('hp', 13);
+            $table->string('hp', 13)->nullable();
             $table->string('foto')->nullable();
             $table->timestamps();
         });
